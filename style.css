@@ -1,0 +1,287 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* RESET BÁSICO E COMPORTAMENTO DE TELA CHEIA */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Cria o efeito de "travar" a rolagem em cada tela como no Instagram */
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* CADA SEÇÃO OCUPA 100% DA TELA */
+.secao-tela {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* Garante altura perfeita em navegadores de celular */
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* FILTRO ESCURO (OVERLAY) PARA DAR LEITURA PERFEITA */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%);
+  z-index: 1;
+}
+
+/* CONTAINER PRINCIPAL DAS TELAS DE MODELO */
+.conteudo-tela {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  height: 85vh; /* Ocupa a maior parte da tela verticalmente */
+  
+  /* Distribui o Topo, Meio e Rodapé com espaço entre eles */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80;
+}
+
+/* 1. ESTILO DO TOPO */
+.bloco-topo {
+  width: 100%;
+  padding-top: 50px;
+}
+
+/* 2. ESTILO DO MEIO (DESCRIÇÃO) */
+.bloco-meio {
+  width: 150%;
+  max-width: 350px;
+}
+
+.descricao-modelo {
+  font-size: 1.15rem;
+  color: #ffffff;
+  line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.25); /* Leve transparência para destacar o texto */
+  padding: 1px 10px;
+  border-radius: 12px;
+}
+
+/* 3. ESTILO DO RODAPÉ (PREÇOS + BOTÃO) */
+.bloco-baixo {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* TITULOS COM A FONTE ELEGANTE DA PLACA */
+h1, h2, .tag-modelo, .btn-agendar, .rotulo {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.titulo-capa {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+
+
+.nome-lash {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.bio-lash {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #dddddd;
+  margin-bottom: 25px;
+}
+
+.btn-scroll {
+  color: #f4ebe1;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border: 1px solid #f4ebe1;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* MODELOS DE CÍLIOS E PREÇOS */
+.tag-modelo {
+  font-size: 0.75rem;
+  color: #f4ebe1;
+  background-color: rgba(255,255,255,0.15);
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.descricao-modelo {
+  font-size: 0.7rem;
+  color: #eeeeee;
+  margin: 30px 0 5px 5px;
+  line-height: 1.1;
+}
+
+.card-precos {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 15px 10px;
+  margin-bottom: 25px;
+}
+
+.item-preco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linha-divisor {
+  width: 1px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.rotulo {
+  font-size: 0.7rem;
+  color: #cccccc;
+  margin-bottom: 4px;
+}
+
+.valor {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* BOTÕES */
+.btn-agendar, .btn-whatsapp {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f4ebe1;
+  color: #111111;
+  transition: transform 0.2s;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+  margin-top: 15px;
+}
+
+.form-agendamento {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-agendamento input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.9);
+  font-size: 1rem;
+}
+
+/* CONFIGURAÇÃO DAS IMAGENS DE FUNDO DE CADA TELA */
+.fundo-capa { background-image: url('mirella.jpeg'); }
+.fundo-vb   { background-image: url('Brasileiro.jpeg'); }
+.fundo-ve   { background-image: url('Egípcio.jpeg'); }
+.fundo-vp   { background-image: url('Princesa.jpeg'); }
+.fundo-m4 {background-image: url('Power.jpeg'); }
+.fundo-m5 {background-image: url(Fox.jpeg);}
+.fundo-agendamento { background-image: url('fim.jpeg'); }
+
+/* ESTILO DA LOGO NA TELA INICIAL */
+.logo-capa {
+  max-width: 400px; /* Ajuste a largura da logo conforme desejar (ex: 180px, 250px) */
+  height: auto;     /* Mantém a proporção correta sem distorcer */
+  margin-top: -150px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)); /* Sombra suave para dar destaque sobre o fundo */
+}
+/* ESTILO DOS CAMPOS DO FORMULÁRIO */
+.form-estilizado {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.grupo-campo label {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.grupo-campo input, 
+.grupo-campo select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.grupo-campo select option {
+  background: #111; /* Cor de fundo da lista de opções */
+  color: #fff;
+}
+
+.grupo-campo input:focus, 
+.grupo-campo select:focus {
+  border-color: #d4af37; /* Ou a cor principal do seu tema */
+}

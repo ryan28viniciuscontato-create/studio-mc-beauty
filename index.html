@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio MC Beauty</title>
+  
+  <!-- Fontes do Google (Cinzel + Cormorant Garamond) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TELA 1: CAPA / APRESENTAÇÃO DA LASH DESIGNER -->
+  <section class="secao-tela fundo-capa"> 
+    <div class="overlay"></div>
+    <div class="conteudo-tela">
+    <img src="brancom.png" class="logo-capa">
+      <p class="subtitulo"></p>
+      
+     
+      
+      <h2 class="nome-lash">Mirella Campanha</h2>
+      <p class="bio-lash">
+        Especialista em realçar a beleza do seu olhar com segurança, biossegurança e técnicas exclusivas personalizadas para seu formato de olho.
+      </p>
+      
+<a href="#modelo-vb" onclick="rolarParaProcedimentos(event)" class="btn-scroll">Ver Procedimentos ↓</a>
+
+    </div>
+  </section
+
+  <!-- TELA 2: VOLUME BRASILEIRO -->
+<section id="modelo-vb" class="secao-tela fundo-vb">
+  <div class="overlay"></div>
+  <div class="conteudo-tela">
+    
+    <!-- 1. TOPO: Nome do Modelo -->
+    <div class="bloco-topo">
+      <span class="tag-modelo">Modelo Favorito</span>
+      <h2>Volume Brasileiro</h2>
+    </div>
+    
+    <!-- 2. MEIO: Descrição -->
+    <div class="bloco-meio">
+      <p class="descricao-modelo">
+"Fios em formato de Y que proporcionam um preenchimento denso, olhar marcante e textura única. Garante volume com extrema leveza e alta durabilidade, ideal para quem deseja destaque e sofisticação no dia a dia."
+      </p>
+    </div>
+    
+    <!-- 3. RODAPÉ: Preços e Botão -->
+    <div class="bloco-baixo">
+      <div class="card-precos">
+        <div class="item-preco">
+          <span class="rotulo">APLICAÇÃO</span>
+          <span class="valor">R$ 150,00</span>
+        </div>
+        <div class="linha-divisor"></div>
+        <div class="item-preco">
+          <span class="rotulo">MANUTENÇÃO</span>
+          <span class="valor">R$ 100,00</span>
+        </div>
+      </div>
+      
+      <button onclick="selecionarEIr('Volume Brasileiro')" class="btn-agendar">Escolher Este Modelo</button>
+    </div>
+    
+  </div>
+</section>
+
+  <!-- TELA 3: VOLUME EGÍPCIO -->
+<section class="secao-tela fundo-ve">
+  <div class="overlay"></div>
+  <div class="conteudo-tela">
+    
+    <!-- 1. TOPO: Nome do Modelo -->
+    <div class="bloco-topo">
+      <h2>Volume Egípcio</h2>
+    </div>
+    
+    <!-- 2. MEIO: Descrição -->
+    <div class="bloco-meio">
+      <p class="descricao-modelo">
+"Técnica com fios trançados em formato de W (3D), oferecendo um volume elegante e simétrico. Perfeito para quem busca preenchimento equilibrado, olhar volumoso sem perder a delicadeza e um acabamento impecável."
+      </p>
+    </div>
+    
+    <!-- 3. RODAPÉ: Preços e Botão -->
+    <div class="bloco-baixo">
+      <div class="card-precos">
+        <div class="item-preco">
+          <span class="rotulo">APLICAÇÃO</span>
+          <span class="valor">R$ 150,00</span>
+        </div>
+        <div class="linha-divisor"></div>
+        <div class="item-preco">
+          <span class="rotulo">MANUTENÇÃO</span>
+          <span class="valor">R$ 100,00</span>
+        </div>
+      </div>
+      
+      <button onclick="selecionarEIr('Volume Egípcio')" class="btn-agendar">Escolher Este Modelo</button>
+    </div>
+    
+  </div>
+</section>
+
+  <!-- TELA 4: VOLUME PRINCESA -->
+<section class="secao-tela fundo-vp">
+  <div class="overlay"></div>
+  <div class="conteudo-tela">
+    
+    <!-- 1. TOPO: Nome do Modelo -->
+    <div class="bloco-topo">
+      <h2>Volume Princesa</h2>
+    </div>
+    
+    <!-- 2. MEIO: Descrição -->
+    <div class="bloco-meio">
+      <p class="descricao-modelo">
+"Com curvatura expressiva e alongamento marcante, esta técnica entrega um visual de rainha. Proporciona um olhar aberto, expressivo e glamoroso, ideal para quem ama cílios bem destacados e curvados."
+      </p>
+    </div>
+    
+    <!-- 3. RODAPÉ: Preços e Botão -->
+    <div class="bloco-baixo">
+      <div class="card-precos">
+        <div class="item-preco">
+          <span class="rotulo">APLICAÇÃO</span>
+          <span class="valor">R$ 150,00</span>
+        </div>
+        <div class="linha-divisor"></div>
+        <div class="item-preco">
+          <span class="rotulo">MANUTENÇÃO</span>
+          <span class="valor">R$ 100,00</span>
+        </div>
+      </div>
+      
+      <button onclick="selecionarEIr('Volume Princesa')" class="btn-agendar">Escolher Este Modelo</button>
+    </div>
+    
+  </div>
+</section>
+
+  <!-- TELA 5: VOLUME POWER -->
+<section class="secao-tela fundo-m4">
+  <div class="overlay"></div>
+  <div class="conteudo-tela">
+    
+    <!-- 1. TOPO: Nome do Modelo -->
+    <div class="bloco-topo">
+      <h2>Volume Power</h2>
+    </div>
+    
+    <!-- 2. MEIO: Descrição -->
+    <div class="bloco-meio">
+      <p class="descricao-modelo">
+"O máximo em densidade e impacto. Utiliza múltiplos fios levemente mais finos para criar um efeito megavolume, denso e super preenchido. A escolha perfeita para um olhar poderoso e inesquecível."
+      </p>
+    </div>
+    
+    <!-- 3. RODAPÉ: Preços e Botão -->
+    <div class="bloco-baixo">
+      <div class="card-precos">
+        <div class="item-preco">
+          <span class="rotulo">APLICAÇÃO</span>
+          <span class="valor">R$ 160,00</span>
+        </div>
+        <div class="linha-divisor"></div>
+        <div class="item-preco">
+          <span class="rotulo">MANUTENÇÃO</span>
+          <span class="valor">R$ 110,00</span>
+        </div>
+      </div>
+      
+      <button onclick="selecionarEIr('Volume Power')" class="btn-agendar">Escolher Este Modelo</button>
+    </div>
+    
+  </div>
+</section>
+
+  <!-- TELA 6: EFEITO FOX -->
+<section class="secao-tela fundo-m5">
+  <div class="overlay"></div>
+  <div class="conteudo-tela">
+    
+    <!-- 1. TOPO: Nome do Modelo -->
+    <div class="bloco-topo">
+      <h2>Efeito Fox</h2>
+    </div>
+    
+    <!-- 2. MEIO: Descrição -->
+    <div class="bloco-meio">
+      <p class="descricao-modelo">
+"Design estrategicamente alongado no canto externo dos olhos, criando um efeito delineado e um olhar sensual e levantado. Ideal para valorizar a simetria do rosto e destacar o olhar de forma moderna."
+      </p>
+    </div>
+    
+    <!-- 3. RODAPÉ: Preços e Botão -->
+    <div class="bloco-baixo">
+      <div class="card-precos">
+        <div class="item-preco">
+          <span class="rotulo">APLICAÇÃO</span>
+          <span class="valor">R$ 160,00</span>
+        </div>
+        <div class="linha-divisor"></div>
+        <div class="item-preco">
+          <span class="rotulo">MANUTENÇÃO</span>
+          <span class="valor">R$ 110,00</span>
+        </div>
+      </div>
+      
+      <button onclick="selecionarEIr('Efeito Fox')" class="btn-agendar">Escolher Este Modelo</button>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ÚLTIMA TELA: FORMULÁRIO DE AGENDAMENTO -->
+<section id="agendamento" class="secao-tela fundo-agendamento">
+  <div class="overlay"></div>
+  
+  <div class="conteudo-tela">
+    
+    <div class="bloco-topo">
+      <h2>Agendar Horário</h2>
+      <p class="subtitulo">Preencha seus dados para finalizar no WhatsApp</p>
+    </div>
+    
+    <div class="bloco-meio">
+      <form id="form-agendamento" onsubmit="enviarWhatsApp(event)" class="form-estilizado">
+        
+        <!-- CAMPO NOME -->
+        <div class="grupo-campo">
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+        </div>
+        
+        <!-- CAMPO SELEÇÃO DE MODELO -->
+        <div class="grupo-campo">
+          <label for="modelo-select">Modelo de Cílios:</label>
+          <select id="modelo-select" required>
+            <option value="" disabled selected>Selecione um modelo...</option>
+            <option value="Volume Brasileiro">Volume Brasileiro</option>
+            <option value="Volume Egípcio">Volume Egípcio</option>
+            <option value="Volume Princesa">Volume Princesa</option>
+            <option value="Volume Power">Volume Power</option>
+            <option value="Efeito Fox">Efeito Fox</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn-agendar btn-enviar">Confirmar no WhatsApp</button>
+      </form>
+    </div>
+    
+    <div class="bloco-baixo">
+      <p class="rodape-texto">Studio MC Beauty • Atendimento Personalizado</p>
+    </div>
+    
+  </div>
+</section>
+
+<script>
+  // Função que envia os dados do formulário final para o WhatsApp
+  function enviarWhatsApp(event) {
+    event.preventDefault(); // Evita recarregar a página
+    
+    var nome = document.getElementById('nome').value;
+    var modelo = document.getElementById('modelo-select').value;
+    var telefone = "5515997731487";
+    
+    // Mensagem completa com o nome e o modelo escolhido
+    var mensagem = "Olá! Meu nome é " + nome + " e gostaria de agendar um horário para o procedimento: " + modelo + ".";
+    
+    var url = "https://wa.me/" + telefone + "?text=" + encodeURIComponent(mensagem);
+    
+    window.location.href = url;
+  }
+  
+  // Função auxiliar para quando clicar em um modelo específico nas telas anteriores
+  function selecionarEIr(modelo) {
+    // Define o modelo no dropdown da última tela
+    document.getElementById('modelo-select').value = modelo;
+    
+    // Rola suavemente até a última tela (agendamento)
+    document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
