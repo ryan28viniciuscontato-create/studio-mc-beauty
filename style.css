@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 /* RESET BÁSICO E COMPORTAMENTO DE TELA CHEIA */
@@ -9,24 +10,20 @@ html {
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  /* Cria o efeito de "travar" a rolagem em cada tela como no Instagram */
-  scroll-snap-type: y mandatory;
-}
-
 body {
   font-family: 'Cormorant Garamond', serif;
   color: #ffffff;
   background-color: #000000;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* CADA SEÇÃO OCUPA 100% DA TELA */
+/* CADA SEÇÃO OCUPA A TELA (OTIMIZADO PARA MOBILE E TECLADO) */
 .secao-tela {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  height: 100dvh; /* Garante altura perfeita em navegadores de celular */
+  min-height: 100vh;
+  min-height: 100dvh;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -35,6 +32,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  /* Aceleração de hardware para a rolagem fluir sem engasgar */
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* FILTRO ESCURO (OVERLAY) PARA DAR LEITURA PERFEITA */
@@ -43,7 +45,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%);
   z-index: 1;
 }
@@ -55,36 +57,36 @@ body {
   text-align: center;
   max-width: 420px;
   width: 90%;
-  height: 85vh; /* Ocupa a maior parte da tela verticalmente */
+  min-height: 80vh;
   
-  /* Distribui o Topo, Meio e Rodapé com espaço entre eles */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 80;
+  padding: 20px 0;
 }
 
 /* 1. ESTILO DO TOPO */
 .bloco-topo {
   width: 100%;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 /* 2. ESTILO DO MEIO (DESCRIÇÃO) */
 .bloco-meio {
-  width: 150%;
+  width: 100%;
   max-width: 350px;
 }
 
 .descricao-modelo {
-  font-size: 1.15rem;
-  color: #ffffff;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #eeeeee;
+  line-height: 1.3;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  background: rgba(0, 0, 0, 0.25); /* Leve transparência para destacar o texto */
-  padding: 1px 10px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 10px 15px;
   border-radius: 12px;
+  margin-top: 15px;
 }
 
 /* 3. ESTILO DO RODAPÉ (PREÇOS + BOTÃO) */
@@ -93,7 +95,7 @@ body {
   padding-bottom: 10px;
 }
 
-/* TITULOS COM A FONTE ELEGANTE DA PLACA */
+/* TÍTULOS COM A FONTE ELEGANTE */
 h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
@@ -110,8 +112,6 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   opacity: 0.8;
   margin-bottom: 20px;
 }
-
-
 
 .nome-lash {
   font-size: 1.5rem;
@@ -138,19 +138,13 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
 
 /* MODELOS DE CÍLIOS E PREÇOS */
 .tag-modelo {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: #f4ebe1;
   background-color: rgba(255,255,255,0.15);
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 12px;
+  display: inline-block;
   margin-bottom: 10px;
-}
-
-.descricao-modelo {
-  font-size: 0.7rem;
-  color: #eeeeee;
-  margin: 30px 0 5px 5px;
-  line-height: 1.1;
 }
 
 .card-precos {
@@ -163,7 +157,7 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   width: 100%;
   justify-content: space-around;
   padding: 15px 10px;
-  margin-bottom: 25px;
+  margin: 15px 0;
 }
 
 .item-preco {
@@ -200,7 +194,7 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   cursor: pointer;
   background-color: #f4ebe1;
   color: #111111;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-whatsapp {
@@ -209,38 +203,23 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   margin-top: 15px;
 }
 
-.form-agendamento {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.form-agendamento input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.9);
-  font-size: 1rem;
-}
-
-/* CONFIGURAÇÃO DAS IMAGENS DE FUNDO DE CADA TELA */
+/* CONFIGURAÇÃO DAS IMAGENS DE FUNDO */
 .fundo-capa { background-image: url('mirella.jpeg'); }
 .fundo-vb   { background-image: url('Brasileiro.jpeg'); }
 .fundo-ve   { background-image: url('Egipcio.jpeg'); }
 .fundo-vp   { background-image: url('Princesa.jpeg'); }
-.fundo-m4 {background-image: url('Power.jpeg'); }
-.fundo-m5 {background-image: url(Fox.jpeg);}
+.fundo-m4   { background-image: url('Power.jpeg'); }
+.fundo-m5   { background-image: url('Fox.jpeg'); }
 .fundo-agendamento { background-image: url('fim.jpeg'); }
 
 /* ESTILO DA LOGO NA TELA INICIAL */
 .logo-capa {
-  max-width: 400px; /* Ajuste a largura da logo conforme desejar (ex: 180px, 250px) */
-  min-height: auto;     /* Mantém a proporção correta sem distorcer */
-  margin-top: -150px;
+  max-width: 280px;
+  height: auto;
   margin-bottom: 15px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)); /* Sombra suave para dar destaque sobre o fundo */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
+
 /* ESTILO DOS CAMPOS DO FORMULÁRIO */
 .form-estilizado {
   width: 100%;
@@ -270,18 +249,18 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   padding: 12px 15px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 1rem;
   outline: none;
 }
 
 .grupo-campo select option {
-  background: #111; /* Cor de fundo da lista de opções */
+  background: #111;
   color: #fff;
 }
 
 .grupo-campo input:focus, 
 .grupo-campo select:focus {
-  border-color: #d4af37; /* Ou a cor principal do seu tema */
+  border-color: #f4ebe1;
 }
