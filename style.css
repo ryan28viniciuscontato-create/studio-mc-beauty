@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  
 }
 
 /* RESET BÁSICO E COMPORTAMENTO DE TELA CHEIA */
@@ -24,7 +24,7 @@ body {
   width: 100vw;
   height: 100vh; /* Altura padrão para evitar saltos com barras de navegadores */
   scroll-snap-align: start;
-  scroll-snap-stop: always; /* Força o navegador a parar certinho em cada tela */
+   /* Força o navegador a parar certinho em cada tela */
   display: flex;
   align-items: center;
   justify-content: center;
