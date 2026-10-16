@@ -249,7 +249,7 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
   padding: 12px 15px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);
   color: #fff;
   font-size: 1rem;
   outline: none;
