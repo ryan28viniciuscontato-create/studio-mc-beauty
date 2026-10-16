@@ -28,7 +28,7 @@
         Especialista em realçar a beleza do seu olhar com segurança, biossegurança e técnicas exclusivas personalizadas para seu formato de olho.
       </p>
       
-<a href="#modelo-vb" onclick="rolarParaModelo(event, 'modelo-vb')" class="btn-scroll">Ver Procedimentos ↓</a>
+<a href="#modelo-vb" onclick="irParaSecao(event, 'modelo-vb')" class="btn-scroll">Ver Procedimentos ↓</a>
 
     </div>
   </section>
@@ -237,18 +237,34 @@
 </section>
 
 <script>
-  // Função para rolar para o primeiro modelo com segurança
-  function rolarParaModelo(event, idSecao) {
-    event.preventDefault();
+  // Função limpa para rolar até qualquer seção de forma exata
+  function irParaSecao(event, idSecao) {
+    if (event) event.preventDefault();
+    
     const elemento = document.getElementById(idSecao);
     if (elemento) {
-      setTimeout(() => {
-        elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
+      elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
-  // Função que envia os dados do formulário final para o WhatsApp
+  // Função para selecionar o modelo e ir direto para o agendamento
+  function selecionarEIr(event, modelo) {
+    if (event) event.preventDefault();
+    
+    // Preenche o campo select do formulário lá embaixo
+    var selectModelo = document.getElementById('modelo-select');
+    if (selectModelo) {
+      selectModelo.value = modelo;
+    }
+    
+    // Rola suavemente até a seção de agendamento
+    const secaoAgendamento = document.getElementById('agendamento');
+    if (secaoAgendamento) {
+      secaoAgendamento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // Envio dos dados para o WhatsApp
   function enviarWhatsApp(event) {
     event.preventDefault();
     
@@ -260,21 +276,6 @@
     var url = "https://wa.me/" + telefone + "?text=" + encodeURIComponent(mensagem);
     
     window.location.href = url;
-  }
-  
-  // Função para selecionar o modelo e ir para o agendamento sem conflito de tela
-  function selecionarEIr(event, modelo) {
-    if (event) event.preventDefault();
-    
-    document.getElementById('modelo-select').value = modelo;
-    
-    const secaoAgendamento = document.getElementById('agendamento');
-    if (secaoAgendamento) {
-      // Pequeno atraso para o navegador processar a mudança de tela sem bugar a barra do celular
-      setTimeout(() => {
-        secaoAgendamento.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
   }
 </script>
 
