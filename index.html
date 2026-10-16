@@ -237,10 +237,15 @@
 </section>
 
 <script>
-  // Função para rolar para o primeiro modelo sem usar âncora bugada
+  // Função para rolar para o primeiro modelo com segurança
   function rolarParaModelo(event, idSecao) {
     event.preventDefault();
-    document.getElementById(idSecao).scrollIntoView({ behavior: 'smooth' });
+    const elemento = document.getElementById(idSecao);
+    if (elemento) {
+      setTimeout(() => {
+        elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
   }
 
   // Função que envia os dados do formulário final para o WhatsApp
@@ -257,11 +262,19 @@
     window.location.href = url;
   }
   
-  // Função para selecionar o modelo e ir direto para o agendamento
-  function selecionarEIr(modelo) {
-    event.preventDefault();
+  // Função para selecionar o modelo e ir para o agendamento sem conflito de tela
+  function selecionarEIr(event, modelo) {
+    if (event) event.preventDefault();
+    
     document.getElementById('modelo-select').value = modelo;
-    document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+    
+    const secaoAgendamento = document.getElementById('agendamento');
+    if (secaoAgendamento) {
+      // Pequeno atraso para o navegador processar a mudança de tela sem bugar a barra do celular
+      setTimeout(() => {
+        secaoAgendamento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
   }
 </script>
 
