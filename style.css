@@ -214,7 +214,7 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
 
 /* ESTILO DA LOGO NA TELA INICIAL */
 .logo-capa {
-  max-width: 280px;
+  max-width: 180px;
   height: auto;
   margin-bottom: 15px;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
