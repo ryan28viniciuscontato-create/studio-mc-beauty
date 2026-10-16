@@ -74,8 +74,8 @@ body {
 
 /* 2. ESTILO DO MEIO (DESCRIÇÃO) */
 .bloco-meio {
-  width: 50%;
-  max-width: 200px;
+  width: 100%;
+  max-width: 350px;
 }
 
 .descricao-modelo {
