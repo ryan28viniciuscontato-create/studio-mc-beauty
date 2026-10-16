@@ -28,10 +28,10 @@
         Especialista em realçar a beleza do seu olhar com segurança, biossegurança e técnicas exclusivas personalizadas para seu formato de olho.
       </p>
       
-<a href="#modelo-vb" onclick="rolarParaProcedimentos(event)" class="btn-scroll">Ver Procedimentos ↓</a>
+<a href="#modelo-vb" onclick="rolarParaModelo(event, 'modelo-vb')" class="btn-scroll">Ver Procedimentos ↓</a>
 
     </div>
-  </section
+  </section>
 
   <!-- TELA 2: VOLUME BRASILEIRO -->
 <section id="modelo-vb" class="secao-tela fundo-vb">
@@ -237,28 +237,30 @@
 </section>
 
 <script>
+  // Função para rolar para o primeiro modelo sem usar âncora bugada
+  function rolarParaModelo(event, idSecao) {
+    event.preventDefault();
+    document.getElementById(idSecao).scrollIntoView({ behavior: 'smooth' });
+  }
+
   // Função que envia os dados do formulário final para o WhatsApp
   function enviarWhatsApp(event) {
-    event.preventDefault(); // Evita recarregar a página
+    event.preventDefault();
     
     var nome = document.getElementById('nome').value;
     var modelo = document.getElementById('modelo-select').value;
     var telefone = "5515997731487";
     
-    // Mensagem completa com o nome e o modelo escolhido
     var mensagem = "Olá! Meu nome é " + nome + " e gostaria de agendar um horário para o procedimento: " + modelo + ".";
-    
     var url = "https://wa.me/" + telefone + "?text=" + encodeURIComponent(mensagem);
     
     window.location.href = url;
   }
   
-  // Função auxiliar para quando clicar em um modelo específico nas telas anteriores
+  // Função para selecionar o modelo e ir direto para o agendamento
   function selecionarEIr(modelo) {
-    // Define o modelo no dropdown da última tela
+    event.preventDefault();
     document.getElementById('modelo-select').value = modelo;
-    
-    // Rola suavemente até a última tela (agendamento)
     document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
   }
 </script>
