@@ -265,3 +265,8 @@ h1, h2, .tag-modelo, .btn-agendar, .rotulo {
 .grupo-campo select:focus {
   border-color: #f4ebe1;
 }
+
+/* Deixa a última tela (agendamento) mais escura */
+#agendamento .overlay {
+  background: rgba(0, 0, 0, 0.75); /* Aumenta o preto por cima da foto de fundo (quanto maior o número, mais escuro fica. Ex: 0.8) */
+}
